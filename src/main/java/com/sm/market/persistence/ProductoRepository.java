@@ -5,6 +5,7 @@ import com.sm.market.domain.repository.ProductRepository;
 import com.sm.market.persistence.crud.ProductoCrudRepository;
 import com.sm.market.persistence.entity.Producto;
 import com.sm.market.persistence.mapper.ProductMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -13,7 +14,11 @@ import java.util.Optional;
 @Repository
 public class ProductoRepository implements ProductRepository {
 
+//    Para usar autowired hay que estar 100% seguro que el objeto a crear es un componente de Spring; directamente o a través de la cadena de herencia.
+//    Autowired hace que la creación de objetos se delegue al framework. Generar objetos manualmente puede ser una mala práctica.
+    @Autowired
     private ProductoCrudRepository productoCrudRepository;
+    @Autowired
     private ProductMapper mapper;
 
     @Override
