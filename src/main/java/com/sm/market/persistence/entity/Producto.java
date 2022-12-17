@@ -16,7 +16,7 @@ public class Producto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_product")
+    @Column(name = "id_producto")
     private Integer idProducto;
 
 //    Si el nombre de la columna de base de datos no cambia con el de la variable, no se pone la anotación @Column
