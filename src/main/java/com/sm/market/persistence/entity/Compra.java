@@ -1,5 +1,6 @@
 package com.sm.market.persistence.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -38,8 +39,8 @@ public class Compra {
     @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "compra")
-    private List<ComprasProducto> compras;
+    @OneToMany(mappedBy = "compra", cascade = {CascadeType.ALL})
+    private List<ComprasProducto> productos;
 
     public Integer getIdCompra() {
         return idCompra;
@@ -97,11 +98,11 @@ public class Compra {
         this.cliente = cliente;
     }
 
-    public List<ComprasProducto> getCompras() {
-        return compras;
+    public List<ComprasProducto> getProductos() {
+        return productos;
     }
 
-    public void setCompras(List<ComprasProducto> compras) {
-        this.compras = compras;
+    public void setCompras(List<ComprasProducto> productos) {
+        this.productos = productos;
     }
 }

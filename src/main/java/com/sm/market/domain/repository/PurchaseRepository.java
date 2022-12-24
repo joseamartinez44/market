@@ -1,6 +1,6 @@
 package com.sm.market.domain.repository;
 
-import com.sm.market.domain.service.Purchase;
+import com.sm.market.domain.Purchase;
 
 import java.util.List;
 import java.util.Optional;
