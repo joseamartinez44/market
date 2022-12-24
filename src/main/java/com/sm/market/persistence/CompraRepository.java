@@ -1,7 +1,7 @@
 package com.sm.market.persistence;
 
-import com.sm.market.domain.repository.PurchaseRepository;
 import com.sm.market.domain.Purchase;
+import com.sm.market.domain.repository.PurchaseRepository;
 import com.sm.market.persistence.crud.CompraCrudRepository;
 import com.sm.market.persistence.entity.Compra;
 import com.sm.market.persistence.mapper.PurchaseMapper;
@@ -35,6 +35,6 @@ public class CompraRepository implements PurchaseRepository {
         compra.getProductos()
                 .forEach(producto -> producto.setCompra(compra));
 
-        return mapper.toPuchase(compraCrudRepository.save(compra));
+        return mapper.toPurchase(compraCrudRepository.save(compra));
     }
 }
